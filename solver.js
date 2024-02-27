@@ -22,6 +22,33 @@ for (let i = 1; i < items.length + 1; i++) {
         elem.classList.add("makeBold");
       } else elem.classList.remove("makeBold");
     }
+    let nextRow = row,
+      nextCol = col;
+    console.log(nextRow, nextCol);
+    ele.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft") {
+        // Move to the previous block or the previous row if col is 1
+        nextCol = (col > 1) ? col - 1 : 9;
+        nextRow = (col === 1) ? Math.max(row - 1, 1) : row;
+    } else if (event.key === "ArrowRight") {
+        // Move to the next block or the next row if col is 9
+        nextCol = (col < 9) ? col + 1 : 1;
+        nextRow = (col === 9) ? Math.min(row + 1, 9) : row;
+    } else if (event.key === "ArrowUp") {
+        // Move to the block above
+        nextRow = (row - 1 + 9) % 9;
+        console.log("Up arrow key pressed");
+    } else if (event.key === "ArrowDown") {
+        // Move to the block below
+        nextRow = (row + 1) % 10;
+    }
+      // console.log((nextRow - 1) * 9 + (nextCol - 1));
+      const nextCell = items[(nextRow - 1) * 9 + (nextCol - 1)];
+      if (nextCell) {
+        nextCell.focus();
+      }
+      event.preventDefault();
+    });
 
     for (let elem of items) {
       let tempRow = elem.getAttribute("data-row");
