@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+JP:wght@100;300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="solver.css" />
+    <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/play-button.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/b5d1c3dd93.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <dialog>
+      <div class="dia">
+        <div>Hey! your Sudouku is not solvable</div>
+        <button>Restart</button>
+        <button>Update value</button>
+      </div>
+    </dialog>
+    <header class="head">My soduku Solver</header>
+    
+    <div class="parent">
+      <div class="leftBox">
+        <div class="leftText">Sodoku</div>
+        <div class="btn">
+          <button>Play</button>
+          <button class="ButtComp">Solve</button>
+          <button class="ButtComp">Option</button>
+        </div>
+      </div>
+      <div class="finalCon">
+        <div class="rightHeader">
+          <div class="icons">
+            <i class="fa-solid fa-play fa-xl"></i>
+            <i class="fa-solid fa-question fa-xl"></i>
+          </div>
+        </div>
+        <div class="badaCon">
+          <div class="grid-container">
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+            <input type="number" min="1" max="9" class="grid-item" />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="solver.js"></script>
+  </body>
+</html>
