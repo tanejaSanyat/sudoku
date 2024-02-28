@@ -16,7 +16,17 @@ for (let i = 1; i < items.length + 1; i++) {
     if (e.target.value.length == 0) ele.classList.remove("firstClick");
     if (value == 0) e.target.value = "";
   });
-
+  ele.addEventListener("keydown", (event) => {
+    if (event.key == "Enter") {
+      event.preventDefault();
+      solveSudoku();
+      console.log(ele);
+      ele.blur();
+      // ele.addEventListener("blur", () => {
+      //   console.log("hello");
+      // });
+    }
+  });
   ele.addEventListener("focus", function (e) {
     for (let elem of items) {
       if (e.target.value > 0 && elem.value == e.target.value) {
@@ -27,20 +37,21 @@ for (let i = 1; i < items.length + 1; i++) {
     let nextRow = row,
       nextCol = col;
     ele.addEventListener("keydown", function (event) {
-      if (
-        event.key === "ArrowLeft"
-      ) {
+      if (event.key === "ArrowLeft") {
         nextCol = col > 1 ? col - 1 : 9;
         nextRow = col === 1 ? Math.max(row - 1, 1) : row;
-      } else if (
-        event.key === "ArrowRight"
-      ) { 
+      } else if (event.key === "ArrowRight" || event.key == " ") {
         nextCol = col < 9 ? col + 1 : 1;
         nextRow = col === 9 ? Math.min(row + 1, 9) : row;
       } else if (event.key === "ArrowUp") nextRow = (row - 1 + 9) % 9;
       else if (event.key === "ArrowDown") nextRow = (row + 1) % 10;
       const nextCell = items[(nextRow - 1) * 9 + (nextCol - 1)];
-      if (nextCell) {
+      if (
+        (nextCell && event.key === "ArrowLeft") ||
+        event.key === "ArrowRight" ||
+        event.key === "ArrowUp" ||
+        event.key === "ArrowDown"
+      ) {
         nextCell.focus();
       }
       if (event.key === "ArrowUp" || event.key === "ArrowDown") {
@@ -141,6 +152,7 @@ function solveSudoku() {
   }
   if (!z) {
     let x = sodokoSolver(twoD);
+    
     if (x) {
       for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
@@ -156,10 +168,7 @@ function solveSudoku() {
   console.log("no solution");
   return;
 }
-
-let input = document.querySelector(".btn").addEventListener("click", () => {
+let buttons = document.querySelectorAll(".btn");
+buttons[0].addEventListener("click", () => {
   items[0].focus();
 });
-
-// let btnDialogue = document.querySelectorAll(".dial");
-// console.log(btnDialogue[2]);
