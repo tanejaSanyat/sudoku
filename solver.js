@@ -20,7 +20,6 @@ for (let i = 1; i < items.length + 1; i++) {
     if (event.key == "Enter") {
       event.preventDefault();
       solveSudoku();
-      ele.blur();
     }
   });
   ele.addEventListener("focus", function (e) {
@@ -85,6 +84,7 @@ for (let i = 1; i < items.length + 1; i++) {
     });
   });
 }
+let popUp = document.querySelector("dialog");
 
 let btn = document.querySelector(".ButtComp");
 btn.addEventListener("click", solveSudoku);
@@ -123,7 +123,6 @@ function sodokoSolver(data) {
 }
 
 function solveSudoku() {
-  // console.log("hiiiii");
   let n = 9;
   let twoD = Array.from({ length: n }, () =>
     Array.from({ length: n }).fill("")
@@ -157,17 +156,24 @@ function solveSudoku() {
         }
       }
       console.log("Sudoku puzzle solved successfully!");
-      // event.blur();
       return;
     }
   }
-  let popUp = document.querySelector("dialog");
   popUp.showModal();
-  // event.blur();
 
   return;
 }
 
 enterValues.addEventListener("click", () => {
   items[0].focus();
+});
+
+Restart.addEventListener("click", () => {
+  console.log("wfiwnfiwef");
+  for (let i = 0; i < items.length; i++) {
+    items[i].value = "";
+    popUp.close();
+    items[i].classList.remove("firstClick")
+  }
+  console.log(popUp);
 });
