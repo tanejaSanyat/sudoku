@@ -1,11 +1,14 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+    font-family: "Montserrat", sans-serif;
 }
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900 */
+
 
 
 input::-webkit-outer-spin-button,
@@ -21,35 +24,32 @@ input[type=number] {
 }
 body{
     background-color:#252b37;
-}
-.head{
+    min-width: 100vw;
+    min-height: 100vh;
     display: flex;
-    width: 100vw;
-    justify-content: center;
-    font-size: 50px;
-    margin-top: px;
-    color: #fb6161;
+    align-items: center;
+
 }
+
 .leftBox{
     width: 270px;
     height: 500px;
-    background-color: white;
-    justify-self: center;
-    /* align-items: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    gap: 60px;
 }
 
 .leftText{
     text-align: center;
-    font-family: "Archivo Black", sans-serif;
-    font-weight: 400;
+    /* font-family: "Archivo Black", sans-serif; */
     font-style: normal;
     font-size: xx-large;
-    margin-top: 50px;
-    margin-bottom: 150px;
     color: #fb6161;
+    font-weight: 700;
 }
 .ButtComp{
-    font-family: "Archivo Black", sans-serif;
+    /* font-family: "Archivo Black", sans-serif; */
     font-weight: 400;
     font-style: normal;
     background-color: #fb6161;
@@ -57,29 +57,24 @@ body{
     width: 150px;
     border: none;
     color: white;
-    /* margin-left : 0px; */
 }
 
 button{
     align-items: center;
     color: white;
-    font-family: "Archivo Black", sans-serif;
+    /* font-family: "Archivo Black", sans-serif; */
     font-weight: 400;
     font-style: normal;
     background-color: #252b37;
     display: block;
     height: 50px;
     border-radius: 10px;
-    color: #8ecec2;
-
-    /* margin-left: 35px; */
 
     margin-top: 20px;
     width: 200px;
     /* display: flex; */
     /* justify-content: center; */
     /* border-radius: 10px; */
-    border: 2px solid  #2879ff;
 }
 
 
@@ -93,7 +88,6 @@ button{
 .badaCon{
     display: flex;
     justify-content: center;
-    background-color: white;
     width: 400px;
     height: 400px;
 
@@ -104,7 +98,6 @@ button{
     width: 360px;
     flex-wrap: wrap;
     height: 320px;
-    background-color: white;
 }
 .icons{
     display: flex;
@@ -139,15 +132,13 @@ button{
 
 .rightHeader{
     height: 70px;
-    background-color: white;
 }
 .btn{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-input{
-    /* color:#ff0000; */
+    gap: 20px;
+    /* border: 2px solid red; */
 }
 
 input:nth-child(3n){
@@ -161,17 +152,17 @@ input:nth-child(n+46):nth-child(-n+54){
 
 
 input.focused{
-    background-color: #d0c4e8;
+    background-color: #b1c8eb;
 }
 .grid-container > input.firstClick{
-    background-color : #2980F2 ; 
-    color: white;
+    background-color : #fca3a3; 
 }
+
 .badaCon input.makePurple{
-    background-color : #7c4dff ; 
+    background-color : #b1c8eb ; 
 }
 .badaCon .grid-container input.makeBold{
-    font-weight: bold;
+    font-weight: 500;
     font-size: x-large;
 }
 dialog{
@@ -179,7 +170,7 @@ dialog{
     aspect-ratio: 1;
     margin: auto auto;
 }
-.dia{
+.dial{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;

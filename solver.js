@@ -27,31 +27,18 @@ for (let i = 1; i < items.length + 1; i++) {
       nextCol = col;
     ele.addEventListener("keydown", function (event) {
       if (event.key === "ArrowLeft") {
-        // Move to the previous block or the previous row if col is 1
         nextCol = col > 1 ? col - 1 : 9;
         nextRow = col === 1 ? Math.max(row - 1, 1) : row;
-      } else if (event.key === "ArrowRight") {
-        // Move to the next block or the next row if col is 9
+      } else if (event.key === "ArrowRight" || event.key === "Enter" || event.key == " ") {
         nextCol = col < 9 ? col + 1 : 1;
         nextRow = col === 9 ? Math.min(row + 1, 9) : row;
-      } else if (event.key === "ArrowUp") {
-        // Move to the block above
-        nextRow = (row - 1 + 9) % 9;
-        console.log("Up arrow key pressed");
-      } else if (event.key === "ArrowDown") {
-        // Move to the block below
-        nextRow = (row + 1) % 10;
-      }
-      // console.log((nextRow - 1) * 9 + (nextCol - 1));
+      } else if (event.key === "ArrowUp") nextRow = (row - 1 + 9) % 9;
+       else if (event.key === "ArrowDown") nextRow = (row + 1) % 10;
       const nextCell = items[(nextRow - 1) * 9 + (nextCol - 1)];
-      if (nextCell) {
-        nextCell.focus();
+      if (nextCell) nextCell.focus();
+      if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+        event.preventDefault();
       }
-      if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
-      event.preventDefault();
-    }
-
-      // event.preventDefault();
     });
 
     for (let elem of items) {
@@ -138,10 +125,8 @@ function solveSudoku() {
   let z = 0;
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
-      if (twoD[i][j] != "" && !isValid(twoD, i, j, twoD[i][j])) {
+      if (twoD[i][j] != "" && !isValid(twoD, i, j, twoD[i][j])){
         z = 1;
-        console.log(i, j);
-        console.log("galat");
         break;
       }
     }
@@ -164,3 +149,10 @@ function solveSudoku() {
   console.log("no solution");
   return;
 }
+
+// let input = document.querySelector(".btn").addEventListener("click", () => {
+//   items[0].focus();
+// });
+
+// let btnDialogue = document.querySelectorAll(".dial");
+// console.log(btnDialogue[2]);
