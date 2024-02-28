@@ -20,11 +20,7 @@ for (let i = 1; i < items.length + 1; i++) {
     if (event.key == "Enter") {
       event.preventDefault();
       solveSudoku();
-      console.log(ele);
       ele.blur();
-      // ele.addEventListener("blur", () => {
-      //   console.log("hello");
-      // });
     }
   });
   ele.addEventListener("focus", function (e) {
@@ -92,7 +88,6 @@ for (let i = 1; i < items.length + 1; i++) {
 
 let btn = document.querySelector(".ButtComp");
 btn.addEventListener("click", solveSudoku);
-
 function isValid(board, row, col, k) {
   board[row][col] = "";
   for (let i = 0; i < 9; i++) {
@@ -128,6 +123,7 @@ function sodokoSolver(data) {
 }
 
 function solveSudoku() {
+  // console.log("hiiiii");
   let n = 9;
   let twoD = Array.from({ length: n }, () =>
     Array.from({ length: n }).fill("")
@@ -152,23 +148,26 @@ function solveSudoku() {
   }
   if (!z) {
     let x = sodokoSolver(twoD);
-    
+
     if (x) {
       for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
           items[i * 9 + j].value = twoD[i][j];
+          items[i * 9 + j].blur();
         }
       }
       console.log("Sudoku puzzle solved successfully!");
+      // event.blur();
       return;
     }
   }
   let popUp = document.querySelector("dialog");
   popUp.showModal();
-  console.log("no solution");
+  // event.blur();
+
   return;
 }
-let buttons = document.querySelectorAll(".btn");
-buttons[0].addEventListener("click", () => {
+
+enterValues.addEventListener("click", () => {
   items[0].focus();
 });
