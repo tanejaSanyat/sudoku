@@ -10,15 +10,19 @@
       href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+JP:wght@100;300&display=swap"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/b5d1c3dd93.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="solver.css" />
     <link rel="stylesheet" href="./fonts">
   </head>
   <body>
     <dialog>
       <div class="dial">
-        <div>Hey! your Sudouku is not solvable</div>
+        <i class="fa-solid fa-xmark icon" id="closePopup"></i>
+        <div>Hey! Your Sudouku is not solvable!</div>
+
         <button id = "Restart">Restart</button>
         <button id = "EnterCorrect">Enter Correct Values</button>
+
       </div>
     </dialog>
     
@@ -28,16 +32,10 @@
         <div class="btn">
           <button id="enterValues">Enter Values</button>
           <button class="ButtComp">Solve</button>
-        <button class="ButtComp">Restart</button>
+        <button class="ButtComp">Reset</button>
         </div>
       </div>
       <div class="finalCon">
-        <div class="rightHeader">
-          <div class="icons">
-            <i class="fa-solid fa-play fa-xl"></i>
-            <i class="fa-solid fa-question fa-xl"></i>
-          </div>
-        </div>
         <div class="badaCon">
           <div class="grid-container">
             <input type="number" min="1" max="9" class="grid-item" />

@@ -3,6 +3,7 @@ let items = document.querySelectorAll(".grid-item");
 for (let i = 1; i < items.length + 1; i++) {
   // input.setSelectionRange(input.value.length, input.value.length);
   let ele = items[i - 1];
+  ele.style.caretColor = "transparent";
   let row = i % 9 == 0 ? Math.floor(i / 9) : Math.floor(i / 9) + 1;
   let col = i % 9 == 0 ? 9 : i % 9;
   ele.setAttribute("data-row", row);
@@ -32,6 +33,11 @@ for (let i = 1; i < items.length + 1; i++) {
     let nextRow = row,
       nextCol = col;
     ele.addEventListener("keydown", function (event) {
+      if (event.key === "Backspace") {
+        ele.value = "";
+        ele.classList.remove("firstClick");
+        for(let i = 0 ; i < items.length ; i++) items[i].classList.remove("makeBold");
+      }
       if (event.key === "ArrowLeft") {
         nextCol = col > 1 ? col - 1 : 9;
         nextRow = col === 1 ? Math.max(row - 1, 1) : row;
@@ -179,3 +185,4 @@ function restart() {
 document.getElementById("Restart").addEventListener("click", restart);
 document.querySelectorAll(".ButtComp")[1].addEventListener("click", restart);
 EnterCorrect.addEventListener("click", () => popUp.close());
+closePopup.addEventListener("click", () => popUp.close());

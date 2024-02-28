@@ -33,8 +33,6 @@ body{
 }
 
 .leftBox{
-    width: 270px;
-    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;    
@@ -92,8 +90,6 @@ button{
 .badaCon{
     display: flex;
     justify-content: center;
-    width: 400px;
-    height: 400px;
 
 }
 .grid-container{
@@ -101,7 +97,7 @@ button{
     justify-content: center;
     width: 360px;
     flex-wrap: wrap;
-    height: 320px;
+
 }
 
 .fa-solid{
@@ -122,15 +118,13 @@ button{
   text-align: center;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
+  caret-color: none;
   transition: all 0.2s;
 }
 .grid-item:focus{
     outline: none;
     background-color: #d0c4e8;
-}
-
-.rightHeader{
-    height: 70px;
 }
 .btn{
     display: flex;
@@ -165,15 +159,42 @@ input.focused{
     font-size: x-large;
 }
 dialog{
-    width:  300px;
-    aspect-ratio: 1;
-    margin: auto auto;
+    max-width: 360px;
+    padding: 40px 20px;
+    width: 80%;
+    margin: auto;
+    border-radius: 5px;
+    position: relative;
 }
 .dial{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 297px;
     justify-content: center;
+    gap: 20px;
+}
+
+dialog button{
+    align-items: center;
+    color: white;
+    /* font-family: "Archivo Black", sans-serif; */
+    font-weight: 400;
+    font-style: normal;
+    background-color: #252b37;
+    display: block;
+    border-radius: 10px;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 40px;
+    margin: auto;
+}
+.icon{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    margin-top: 0;
+    margin-left: 0;
 }
