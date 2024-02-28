@@ -1,6 +1,7 @@
 let items = document.querySelectorAll(".grid-item");
 
 for (let i = 1; i < items.length + 1; i++) {
+  // input.setSelectionRange(input.value.length, input.value.length);
   let ele = items[i - 1];
   let row = i % 9 == 0 ? Math.floor(i / 9) : Math.floor(i / 9) + 1;
   let col = i % 9 == 0 ? 9 : i % 9;
@@ -26,16 +27,22 @@ for (let i = 1; i < items.length + 1; i++) {
     let nextRow = row,
       nextCol = col;
     ele.addEventListener("keydown", function (event) {
-      if (event.key === "ArrowLeft") {
+      if (
+        event.key === "ArrowLeft"
+      ) {
         nextCol = col > 1 ? col - 1 : 9;
         nextRow = col === 1 ? Math.max(row - 1, 1) : row;
-      } else if (event.key === "ArrowRight" || event.key === "Enter" || event.key == " ") {
+      } else if (
+        event.key === "ArrowRight"
+      ) { 
         nextCol = col < 9 ? col + 1 : 1;
         nextRow = col === 9 ? Math.min(row + 1, 9) : row;
       } else if (event.key === "ArrowUp") nextRow = (row - 1 + 9) % 9;
-       else if (event.key === "ArrowDown") nextRow = (row + 1) % 10;
+      else if (event.key === "ArrowDown") nextRow = (row + 1) % 10;
       const nextCell = items[(nextRow - 1) * 9 + (nextCol - 1)];
-      if (nextCell) nextCell.focus();
+      if (nextCell) {
+        nextCell.focus();
+      }
       if (event.key === "ArrowUp" || event.key === "ArrowDown") {
         event.preventDefault();
       }
@@ -125,7 +132,7 @@ function solveSudoku() {
   let z = 0;
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
-      if (twoD[i][j] != "" && !isValid(twoD, i, j, twoD[i][j])){
+      if (twoD[i][j] != "" && !isValid(twoD, i, j, twoD[i][j])) {
         z = 1;
         break;
       }
@@ -150,9 +157,9 @@ function solveSudoku() {
   return;
 }
 
-// let input = document.querySelector(".btn").addEventListener("click", () => {
-//   items[0].focus();
-// });
+let input = document.querySelector(".btn").addEventListener("click", () => {
+  items[0].focus();
+});
 
 // let btnDialogue = document.querySelectorAll(".dial");
 // console.log(btnDialogue[2]);

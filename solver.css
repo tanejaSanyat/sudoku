@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
+    font-weight: 500;
 }
 /* // <uniquifier>: Use a unique and descriptive class name
 // <weight>: Use a value from 100 to 900 */
@@ -57,6 +58,7 @@ body{
     width: 150px;
     border: none;
     color: white;
+    box-shadow: none;
 }
 
 button{
@@ -69,7 +71,8 @@ button{
     display: block;
     height: 50px;
     border-radius: 10px;
-
+    border: none;
+    box-shadow: rgb(165 165 165 / 77%) 0px 2px 8px 0px;
     margin-top: 20px;
     width: 200px;
     /* display: flex; */
@@ -82,7 +85,8 @@ button{
     display: flex;
     height: 80vh;
     width: 100vw;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 40px;
     align-items: center;
 }
 .badaCon{
@@ -99,12 +103,7 @@ button{
     flex-wrap: wrap;
     height: 320px;
 }
-.icons{
-    display: flex;
-    justify-content: space-between;
-    /* margin-top: 10px; */
-    /* background-color: antiquewhite; */
-}
+
 .fa-solid{
     margin-top: 20px;
     margin-left: 10px;
