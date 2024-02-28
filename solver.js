@@ -156,6 +156,7 @@ function solveSudoku() {
         }
       }
       console.log("Sudoku puzzle solved successfully!");
+
       return;
     }
   }
@@ -167,13 +168,14 @@ function solveSudoku() {
 enterValues.addEventListener("click", () => {
   items[0].focus();
 });
-
-Restart.addEventListener("click", () => {
-  console.log("wfiwnfiwef");
+function restart() {
   for (let i = 0; i < items.length; i++) {
     items[i].value = "";
     popUp.close();
-    items[i].classList.remove("firstClick")
+    items[i].classList.remove("firstClick");
   }
-  console.log(popUp);
-});
+}
+
+document.getElementById("Restart").addEventListener("click", restart);
+document.querySelectorAll(".ButtComp")[1].addEventListener("click", restart);
+EnterCorrect.addEventListener("click", () => popUp.close());
