@@ -1,7 +1,7 @@
 for (let i = 0; i < 81; i++)
   document.getElementById(
     "grid-container"
-  ).innerHTML += `<input type="text" min="1" max="9" class="grid-item" oninput="this.value = this.value.replace(/\s/g, '')" />`;
+  ).innerHTML += `<input type="number" min="1" max="9" class="grid-item" oninput="this.value = this.value.replace(/\D/g, '')" />`;
 let items = document.querySelectorAll(".grid-item");
 console.log(items[0]);
 for (let i = 1; i < items.length + 1; i++) {
