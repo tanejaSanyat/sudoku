@@ -35,6 +35,13 @@ for (let i = 1; i < items.length + 1; i++) {
 
     let nextRow = row,
       nextCol = col;
+
+      ele.addEventListener('input',()=>{
+        nextCol = col < 9 ? col + 1 : 1;
+        nextRow = col === 9 ? Math.min(row + 1, 9) : row;
+      const nextCell = items[(nextRow - 1) * 9 + (nextCol - 1)];
+        nextCell.focus();
+      });
     ele.addEventListener("keydown", function (event) {
       if (event.key === "Backspace") {
         ele.value = "";
