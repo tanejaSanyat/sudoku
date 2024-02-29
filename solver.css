@@ -92,17 +92,12 @@ button:hover{
     gap: 40px;
     align-items: center;
 }
-.badaCon{
-    display: flex;
-    justify-content: center;
 
-}
 .grid-container{
     display: flex;
     justify-content: center;
     width: 360px;
     flex-wrap: wrap;
-
 }
 
 .fa-solid{
@@ -156,10 +151,10 @@ input.focused{
     background-color : #fca3a3; 
 }
 
-.badaCon input.makePurple{
+input.makePurple{
     background-color : #b1c8eb ; 
 }
-.badaCon .grid-container input.makeBold{
+.grid-container input.makeBold{
     font-weight: 500;
     font-size: x-large;
 }
@@ -202,4 +197,28 @@ dialog button{
     cursor: pointer;
     margin-top: 0;
     margin-left: 0;
+}
+
+@media screen and (max-width: 675px) {
+
+    .leftBox{
+        gap:20px;
+    }
+    .parent{
+        flex-direction: column;
+    }
+    
+}
+@media screen and (max-width: 400px) {
+    .grid-container{
+        scale: 0.9;
+    }    
+    button,.ButtComp{
+        height: 30px;
+    }
+}
+@media screen and (max-width: 330px) {
+    .grid-container{
+        scale: 0.7;
+    }    
 }
