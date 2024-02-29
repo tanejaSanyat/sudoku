@@ -14,7 +14,6 @@ for (let i = 1; i < items.length + 1; i++) {
   ele.setAttribute("data-col", col);
   ele.addEventListener("input", function (e) {
     let x = ele;
-
     let { value } = e.target;
     if (value > 9) e.target.value = Math.floor(e.target.value / 10);
     if (value > 0 && value <= 9) ele.classList.add("firstClick");
